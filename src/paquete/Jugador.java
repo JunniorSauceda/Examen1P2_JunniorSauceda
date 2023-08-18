@@ -10,9 +10,9 @@ package paquete;
  */
 public abstract class Jugador {
     private String Nombre, nacionalidad,pieHabil;
-    private int edad,rating ;
+    private int edad;
     private Equipo equipo=new Equipo();
-    private int Agarre, Lanzamiento, Físico, Ritmo, Entrada,Visión, Passing, Regate , Disparo;
+    protected int Agarre, Lanzamiento, Físico, Ritmo, Entrada,Visión, Passing, Regate , Disparo,rating ;
 
     public Jugador() {
     }
@@ -82,7 +82,7 @@ public abstract class Jugador {
         return Lanzamiento;
     }
 
-    public abstract void setLanzamiento(int Lanzamiento);
+    public abstract void setLanzamiento();
 
     public int getFísico() {
         return Físico;
