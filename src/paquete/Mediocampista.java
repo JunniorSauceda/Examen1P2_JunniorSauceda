@@ -8,12 +8,14 @@ package paquete;
  *
  * @author Junnior Sauceda
  */
-public class Defensa extends Jugador{
-    Random ran = new Random();
-    public Defensa() {
+public class Mediocampista extends Jugador{
+    Random ran= new Random();
+
+    public Mediocampista() {
+        super();
     }
 
-    public Defensa(String Nombre, String nacionalidad, String pieHabil, int edad) {
+    public Mediocampista(String Nombre, String nacionalidad, String pieHabil, int edad) {
         super(Nombre, nacionalidad, pieHabil, edad);
     
         setAgarre();
@@ -28,9 +30,6 @@ public class Defensa extends Jugador{
         setRating();
     }
 
-    
-    
-    
     @Override
     public void setRating() {
         rating= (Agarre+Físico+Disparo+Entrada+Lanzamiento+Passing+Regate+Ritmo+Visión)/9;
@@ -49,8 +48,8 @@ public class Defensa extends Jugador{
     @Override
     public void setFísico() {
         int num=0;
-        while(num<70||num>100){
-            num=((ran.nextInt(12))*12);
+        while(num>100){
+            num=((ran.nextInt(5))*13);
         }
         Físico=num;
     }
@@ -58,8 +57,8 @@ public class Defensa extends Jugador{
     @Override
     public void setRitmo() {
         int num=0;
-        while(num<70||num>100){
-            num=((ran.nextInt(12))*12);
+        while(num>100){
+            num=((ran.nextInt(5))*13);
         }
         Ritmo=num;
     }
@@ -67,8 +66,8 @@ public class Defensa extends Jugador{
     @Override
     public void setEntrada() {
         int num=0;
-        while(num<70||num>100){
-            num=((ran.nextInt(12))*12);
+        while(num>100){
+            num=((ran.nextInt(5))*13);
         }
         Entrada=num;
     }
@@ -76,8 +75,8 @@ public class Defensa extends Jugador{
     @Override
     public void setVisión() {
         int num=0;
-        while(num>100){
-            num=((ran.nextInt(5))*13);
+        while(num<70||num>100){
+            num=((ran.nextInt(12))*12);
         }
         Visión=num;
     }
@@ -85,8 +84,8 @@ public class Defensa extends Jugador{
     @Override
     public void setPassing() {
         int num=0;
-        while(num>100){
-            num=((ran.nextInt(5))*13);
+        while(num<70||num>100){
+            num=((ran.nextInt(12))*12);
         }
         Passing=num;
     }
@@ -94,8 +93,8 @@ public class Defensa extends Jugador{
     @Override
     public void setRegate() {
         int num=0;
-        while(num>100){
-            num=((ran.nextInt(5))*13);
+        while(num<70||num>100){
+            num=((ran.nextInt(12))*12);
         }
         Regate=num;
     }
@@ -117,4 +116,7 @@ public class Defensa extends Jugador{
         }
         Lanzamiento=num;
     }
+    
+    
+    
 }
