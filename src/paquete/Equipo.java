@@ -11,14 +11,14 @@ import java.util.ArrayList;
  * @author Junnior Sauceda
  */
 public class Equipo {
+
     private String Nombre, pais;
     private int rating;
-    private ArrayList <Jugador> plantilla=new ArrayList<>();
+    private ArrayList<Jugador> plantilla = new ArrayList<>();
 
     public Equipo() {
     }
 
-    
     public Equipo(String Nombre, String pais) {
         this.Nombre = Nombre;
         this.pais = pais;
@@ -44,12 +44,16 @@ public class Equipo {
         return rating;
     }
 
-    public void setRating(int rating) {
-        int acum=0;
-        for (Jugador jugador : plantilla) {
-            acum+=jugador.getRating();
+    public void setRating() {
+        int acum = 0;
+        if (plantilla.isEmpty()) {
+            this.rating=0;
+        } else {
+            for (Jugador jugador : plantilla) {
+                acum += jugador.getRating();
+            }
+            this.rating = acum / plantilla.size();
         }
-        this.rating=acum/plantilla.size();
     }
 
     public ArrayList<Jugador> getPlantilla() {
@@ -57,20 +61,16 @@ public class Equipo {
     }
 
     public void setPlantilla(ArrayList<Jugador> plantilla) {
-        if(plantilla.size()>4){
-            
-        }
-        else{
+        if (plantilla.size() > 4) {
+
+        } else {
             this.plantilla = plantilla;
         }
     }
 
     @Override
     public String toString() {
-        return Nombre + " - " + pais ;
+        return Nombre + " - " + pais;
     }
-    
-    
-    
-    
+
 }
