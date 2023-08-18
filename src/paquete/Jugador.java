@@ -17,11 +17,12 @@ public abstract class Jugador {
     public Jugador() {
     }
 
-    public Jugador(String Nombre, String nacionalidad, String pieHabil, int edad) {
+    public Jugador(String Nombre, String nacionalidad, String pieHabil, int edad,Equipo equipo) {
         this.Nombre = Nombre;
         this.nacionalidad = nacionalidad;
         this.pieHabil = pieHabil;
         this.edad = edad;
+        this.equipo=equipo;
     }
     
     

@@ -18,8 +18,8 @@ public class Delantero extends Jugador {
         super();
     }
 
-    public Delantero(String Nombre, String nacionalidad, String pieHabil, int edad) {
-        super(Nombre, nacionalidad, pieHabil, edad);
+    public Delantero(String Nombre, String nacionalidad, String pieHabil, int edad,Equipo equipo) {
+        super(Nombre, nacionalidad, pieHabil, edad,equipo);
         setAgarre();
         setDisparo();
         setEntrada();

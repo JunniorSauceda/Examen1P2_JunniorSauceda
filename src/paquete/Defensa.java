@@ -13,8 +13,8 @@ public class Defensa extends Jugador{
     public Defensa() {
     }
 
-    public Defensa(String Nombre, String nacionalidad, String pieHabil, int edad) {
-        super(Nombre, nacionalidad, pieHabil, edad);
+    public Defensa(String Nombre, String nacionalidad, String pieHabil, int edad,Equipo equipo) {
+        super(Nombre, nacionalidad, pieHabil, edad,equipo);
     
         setAgarre();
         setDisparo();

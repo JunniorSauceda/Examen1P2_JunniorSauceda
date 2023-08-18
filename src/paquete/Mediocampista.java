@@ -15,8 +15,8 @@ public class Mediocampista extends Jugador{
         super();
     }
 
-    public Mediocampista(String Nombre, String nacionalidad, String pieHabil, int edad) {
-        super(Nombre, nacionalidad, pieHabil, edad);
+    public Mediocampista(String Nombre, String nacionalidad, String pieHabil, int edad,Equipo equipo) {
+        super(Nombre, nacionalidad, pieHabil, edad,equipo);
     
         setAgarre();
         setDisparo();
