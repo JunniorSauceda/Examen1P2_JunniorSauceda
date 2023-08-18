@@ -26,21 +26,118 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        bt_Ajugador = new javax.swing.JButton();
+        bt_AEstadio = new javax.swing.JButton();
+        bt_listar = new javax.swing.JButton();
+        bt_Aequipo = new javax.swing.JButton();
+        bt_Start = new javax.swing.JButton();
+        bt_MJugador = new javax.swing.JButton();
+        bt_MEquipo = new javax.swing.JButton();
+        bt_MEstadio = new javax.swing.JButton();
+        bt_Ejugador = new javax.swing.JButton();
+        bt_Eequipo = new javax.swing.JButton();
+        bt_Eestadio = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Examen1P2_JunniorSauceda(Ronaldinho)");
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bt_Ajugador.setBackground(new java.awt.Color(27, 98, 216));
+        bt_Ajugador.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Ajugador.setText("Añadir jugador");
+        jPanel1.add(bt_Ajugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 120, 40));
+
+        bt_AEstadio.setBackground(new java.awt.Color(27, 98, 216));
+        bt_AEstadio.setForeground(new java.awt.Color(255, 255, 255));
+        bt_AEstadio.setText("Añadir Estadio");
+        jPanel1.add(bt_AEstadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 120, 40));
+
+        bt_listar.setBackground(new java.awt.Color(27, 98, 216));
+        bt_listar.setForeground(new java.awt.Color(255, 255, 255));
+        bt_listar.setText("Listar");
+        jPanel1.add(bt_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 120, 40));
+
+        bt_Aequipo.setBackground(new java.awt.Color(27, 98, 216));
+        bt_Aequipo.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Aequipo.setText("Añadir Equipo");
+        bt_Aequipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_AequipoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt_Aequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 120, 40));
+
+        bt_Start.setBackground(new java.awt.Color(32, 47, 188));
+        bt_Start.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Start.setText("Start");
+        bt_Start.setBorder(new javax.swing.border.MatteBorder(null));
+        bt_Start.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_Start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_StartActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt_Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 520, 120, 40));
+
+        bt_MJugador.setBackground(new java.awt.Color(27, 98, 216));
+        bt_MJugador.setForeground(new java.awt.Color(255, 255, 255));
+        bt_MJugador.setText("Modificar jugador");
+        jPanel1.add(bt_MJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 120, 40));
+
+        bt_MEquipo.setBackground(new java.awt.Color(27, 98, 216));
+        bt_MEquipo.setForeground(new java.awt.Color(255, 255, 255));
+        bt_MEquipo.setText("Modificar Equipo");
+        jPanel1.add(bt_MEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 120, 40));
+
+        bt_MEstadio.setBackground(new java.awt.Color(27, 98, 216));
+        bt_MEstadio.setForeground(new java.awt.Color(255, 255, 255));
+        bt_MEstadio.setText("Modificar Estadio");
+        jPanel1.add(bt_MEstadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 120, 40));
+
+        bt_Ejugador.setBackground(new java.awt.Color(27, 98, 216));
+        bt_Ejugador.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Ejugador.setText("Eliminar Jugador");
+        jPanel1.add(bt_Ejugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 120, 40));
+
+        bt_Eequipo.setBackground(new java.awt.Color(27, 98, 216));
+        bt_Eequipo.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Eequipo.setText("Eliminar Equipo");
+        jPanel1.add(bt_Eequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 120, 40));
+
+        bt_Eestadio.setBackground(new java.awt.Color(27, 98, 216));
+        bt_Eestadio.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Eestadio.setText("Eliminar Estadio");
+        jPanel1.add(bt_Eestadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 120, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ronaldinho.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, 0, 1110, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 708, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 519, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_StartActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_StartActionPerformed
+
+    private void bt_AequipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_AequipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_AequipoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +175,18 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_AEstadio;
+    private javax.swing.JButton bt_Aequipo;
+    private javax.swing.JButton bt_Ajugador;
+    private javax.swing.JButton bt_Eequipo;
+    private javax.swing.JButton bt_Eestadio;
+    private javax.swing.JButton bt_Ejugador;
+    private javax.swing.JButton bt_MEquipo;
+    private javax.swing.JButton bt_MEstadio;
+    private javax.swing.JButton bt_MJugador;
+    private javax.swing.JButton bt_Start;
+    private javax.swing.JButton bt_listar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
