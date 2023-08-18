@@ -8,16 +8,14 @@ package paquete;
  *
  * @author Junnior Sauceda
  */
-public class Portero extends Jugador {
-    Random ran=new Random();
-
-    public Portero() {
-        super();
+public class Defensa extends Jugador{
+    Random ran = new Random();
+    public Defensa() {
     }
-    
-    
-    public Portero(String Nombre, String nacionalidad, String pieHabil, int edad) {
+
+    public Defensa(String Nombre, String nacionalidad, String pieHabil, int edad) {
         super(Nombre, nacionalidad, pieHabil, edad);
+    
         setAgarre();
         setDisparo();
         setEntrada();
@@ -41,8 +39,8 @@ public class Portero extends Jugador {
     @Override
     public void setAgarre() {
         int num=0;
-        while(num<70||num>100){
-            num=((ran.nextInt(12))*12);
+        while(num>100){
+            num=((ran.nextInt(5))*13);
         }
         Agarre=num;
     }
@@ -51,8 +49,8 @@ public class Portero extends Jugador {
     @Override
     public void setFísico() {
         int num=0;
-        while(num>100){
-            num=((ran.nextInt(5))*13);
+        while(num<70||num>100){
+            num=((ran.nextInt(12))*12);
         }
         Físico=num;
     }
@@ -60,8 +58,8 @@ public class Portero extends Jugador {
     @Override
     public void setRitmo() {
         int num=0;
-        while(num>100){
-            num=((ran.nextInt(5))*13);
+        while(num<70||num>100){
+            num=((ran.nextInt(12))*12);
         }
         Ritmo=num;
     }
@@ -69,8 +67,8 @@ public class Portero extends Jugador {
     @Override
     public void setEntrada() {
         int num=0;
-        while(num>100){
-            num=((ran.nextInt(5))*13);
+        while(num<70||num>100){
+            num=((ran.nextInt(12))*12);
         }
         Entrada=num;
     }
@@ -87,8 +85,8 @@ public class Portero extends Jugador {
     @Override
     public void setPassing() {
         int num=0;
-        while(num<70||num>100){
-            num=((ran.nextInt(12))*12);
+        while(num>100){
+            num=((ran.nextInt(5))*13);
         }
         Passing=num;
     }
@@ -114,10 +112,9 @@ public class Portero extends Jugador {
     @Override
     public void setLanzamiento() {
         int num=0;
-        while(num<70||num>100){
-            num=((ran.nextInt(12))*12);
+        while(num>100){
+            num=((ran.nextInt(5))*13);
         }
-        Lanzamiento=num;
+        Regate=num;
     }
-    
 }

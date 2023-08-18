@@ -17,7 +17,7 @@ public abstract class Jugador {
     public Jugador() {
     }
 
-    public Jugador(String Nombre, String nacionalidad, String pieHabil, int edad, int rating) {
+    public Jugador(String Nombre, String nacionalidad, String pieHabil, int edad) {
         this.Nombre = Nombre;
         this.nacionalidad = nacionalidad;
         this.pieHabil = pieHabil;
