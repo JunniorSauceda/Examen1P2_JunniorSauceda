@@ -70,7 +70,7 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return Nombre + " - " + pais;
+        return Nombre + " -Pais " + pais+" -Rating "+rating;
     }
 
 }
