@@ -5,6 +5,7 @@
 package paquete;
 
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -28,6 +29,8 @@ public class Main extends javax.swing.JFrame {
         pn_ElimJug.setVisible(false);
         pn_ElimEq.setVisible(false);
         pn_ElimEst.setVisible(false);
+        pn_simulacion.setVisible(false);
+        pn_Lista.setVisible(false);
 
     }
 
@@ -41,6 +44,22 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        pn_simulacion = new javax.swing.JPanel();
+        lb_agregarJ11 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        cb_eq1 = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        cb_eq2 = new javax.swing.JComboBox<>();
+        bt_Simular = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ta_resultado = new javax.swing.JTextArea();
+        pn_Lista = new javax.swing.JPanel();
+        lb_agregarJ10 = new javax.swing.JLabel();
+        cb_objeto = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        Bt_Listar = new javax.swing.JToggleButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ta_historial = new javax.swing.JTextArea();
         pn_ElimEst = new javax.swing.JPanel();
         lb_agregarJ9 = new javax.swing.JLabel();
         bt_ElimEsta = new javax.swing.JButton();
@@ -149,6 +168,155 @@ public class Main extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pn_simulacion.setBackground(new java.awt.Color(255, 255, 51));
+
+        lb_agregarJ11.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        lb_agregarJ11.setForeground(new java.awt.Color(0, 0, 0));
+        lb_agregarJ11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_agregarJ11.setText("Simulacion");
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Equipo 1:");
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Equipo 2:");
+
+        bt_Simular.setBackground(new java.awt.Color(51, 255, 0));
+        bt_Simular.setForeground(new java.awt.Color(0, 0, 0));
+        bt_Simular.setText("Simular");
+        bt_Simular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_SimularMouseClicked(evt);
+            }
+        });
+        bt_Simular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_SimularActionPerformed(evt);
+            }
+        });
+
+        ta_resultado.setBackground(new java.awt.Color(255, 255, 255));
+        ta_resultado.setColumns(20);
+        ta_resultado.setForeground(new java.awt.Color(0, 0, 0));
+        ta_resultado.setRows(5);
+        jScrollPane2.setViewportView(ta_resultado);
+
+        javax.swing.GroupLayout pn_simulacionLayout = new javax.swing.GroupLayout(pn_simulacion);
+        pn_simulacion.setLayout(pn_simulacionLayout);
+        pn_simulacionLayout.setHorizontalGroup(
+            pn_simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lb_agregarJ11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pn_simulacionLayout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addGroup(pn_simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pn_simulacionLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(35, 35, 35)
+                        .addComponent(cb_eq1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pn_simulacionLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(35, 35, 35)
+                        .addGroup(pn_simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cb_eq2, 0, 280, Short.MAX_VALUE)
+                            .addComponent(bt_Simular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane2))
+                .addContainerGap(241, Short.MAX_VALUE))
+        );
+        pn_simulacionLayout.setVerticalGroup(
+            pn_simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_simulacionLayout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(lb_agregarJ11)
+                .addGap(18, 18, 18)
+                .addGroup(pn_simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(cb_eq1))
+                .addGap(18, 18, 18)
+                .addGroup(pn_simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cb_eq2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(bt_Simular, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(254, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(pn_simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 790, 670));
+
+        pn_Lista.setBackground(new java.awt.Color(204, 0, 204));
+
+        lb_agregarJ10.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        lb_agregarJ10.setForeground(new java.awt.Color(0, 0, 0));
+        lb_agregarJ10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_agregarJ10.setText("Listado");
+
+        cb_objeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jugadores", "Equipos", "Estadios" }));
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Seleccione lo que desea listar: ");
+
+        Bt_Listar.setBackground(new java.awt.Color(0, 0, 255));
+        Bt_Listar.setText("Listar");
+        Bt_Listar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Bt_ListarMouseClicked(evt);
+            }
+        });
+        Bt_Listar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bt_ListarActionPerformed(evt);
+            }
+        });
+
+        ta_historial.setBackground(new java.awt.Color(255, 255, 255));
+        ta_historial.setColumns(20);
+        ta_historial.setRows(5);
+        jScrollPane1.setViewportView(ta_historial);
+
+        javax.swing.GroupLayout pn_ListaLayout = new javax.swing.GroupLayout(pn_Lista);
+        pn_Lista.setLayout(pn_ListaLayout);
+        pn_ListaLayout.setHorizontalGroup(
+            pn_ListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lb_agregarJ10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pn_ListaLayout.createSequentialGroup()
+                .addGroup(pn_ListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pn_ListaLayout.createSequentialGroup()
+                        .addGap(271, 271, 271)
+                        .addComponent(Bt_Listar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pn_ListaLayout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addGroup(pn_ListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pn_ListaLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(cb_objeto, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(186, Short.MAX_VALUE))
+        );
+        pn_ListaLayout.setVerticalGroup(
+            pn_ListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_ListaLayout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(lb_agregarJ10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pn_ListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(cb_objeto))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Bt_Listar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(128, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(pn_Lista, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 790, 670));
 
         pn_ElimEst.setBackground(new java.awt.Color(255, 255, 51));
 
@@ -942,6 +1110,11 @@ public class Main extends javax.swing.JFrame {
         bt_listar.setBackground(new java.awt.Color(27, 98, 216));
         bt_listar.setForeground(new java.awt.Color(255, 255, 255));
         bt_listar.setText("Listar");
+        bt_listar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_listarMouseClicked(evt);
+            }
+        });
         jPanel1.add(bt_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 120, 40));
 
         bt_Aequipo.setBackground(new java.awt.Color(27, 98, 216));
@@ -964,6 +1137,11 @@ public class Main extends javax.swing.JFrame {
         bt_Start.setText("Start");
         bt_Start.setBorder(new javax.swing.border.MatteBorder(null));
         bt_Start.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_Start.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_StartMouseClicked(evt);
+            }
+        });
         bt_Start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_StartActionPerformed(evt);
@@ -1029,6 +1207,11 @@ public class Main extends javax.swing.JFrame {
         bt_Start1.setText("Start");
         bt_Start1.setBorder(new javax.swing.border.MatteBorder(null));
         bt_Start1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_Start1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_Start1MouseClicked(evt);
+            }
+        });
         bt_Start1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_Start1ActionPerformed(evt);
@@ -1127,6 +1310,11 @@ public class Main extends javax.swing.JFrame {
         pn_ModJ.setVisible(false);
         pn_ModEq.setVisible(false);
         pn_Modest.setVisible(false);
+        pn_ElimJug.setVisible(false);
+        pn_ElimEq.setVisible(false);
+        pn_ElimEst.setVisible(false);
+        pn_simulacion.setVisible(false);
+        pn_Lista.setVisible(false);
     }//GEN-LAST:event_bt_AjugadorMouseClicked
 
     private void bt_crearJMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_crearJMouseClicked
@@ -1203,6 +1391,11 @@ public class Main extends javax.swing.JFrame {
         pn_ModJ.setVisible(false);
         pn_ModEq.setVisible(false);
         pn_Modest.setVisible(false);
+        pn_ElimJug.setVisible(false);
+        pn_ElimEq.setVisible(false);
+        pn_ElimEst.setVisible(false);
+        pn_simulacion.setVisible(false);
+        pn_Lista.setVisible(false);
 
     }//GEN-LAST:event_bt_AequipoMouseClicked
 
@@ -1218,7 +1411,7 @@ public class Main extends javax.swing.JFrame {
             } else {
 
                 Estadios.add(new Estadio(tf_nomest.getText(), tf_paisest.getText(), Integer.parseInt(ftf_capacidad.getText())));
-                Estadios.get(Estadios.size()-1).setDueño(((Equipo)cb_dueño.getSelectedItem()));
+                Estadios.get(Estadios.size() - 1).setDueño(((Equipo) cb_dueño.getSelectedItem()));
                 JOptionPane.showMessageDialog(this, "Se ha agregado con exito");
                 pn_AEst.setVisible(false);
                 tf_nomest.setText("");
@@ -1243,6 +1436,11 @@ public class Main extends javax.swing.JFrame {
         pn_ModJ.setVisible(false);
         pn_ModEq.setVisible(false);
         pn_Modest.setVisible(false);
+        pn_ElimJug.setVisible(false);
+        pn_ElimEq.setVisible(false);
+        pn_ElimEst.setVisible(false);
+        pn_simulacion.setVisible(false);
+        pn_Lista.setVisible(false);
         DefaultComboBoxModel modelo = ((DefaultComboBoxModel) cb_dueño.getModel());
         for (Equipo Equipo1 : Equipos) {
             modelo.addElement(Equipo1);
@@ -1299,6 +1497,11 @@ public class Main extends javax.swing.JFrame {
             pn_ModJ.setVisible(true);
             pn_ModEq.setVisible(false);
             pn_Modest.setVisible(false);
+            pn_ElimJug.setVisible(false);
+            pn_ElimEq.setVisible(false);
+            pn_ElimEst.setVisible(false);
+            pn_simulacion.setVisible(false);
+            pn_Lista.setVisible(false);
             DefaultComboBoxModel modelo = ((DefaultComboBoxModel) (cb_jug.getModel()));
             for (Jugador Jugadore : Jugadores) {
                 modelo.addElement(Jugadore);
@@ -1335,13 +1538,17 @@ public class Main extends javax.swing.JFrame {
 
     private void bt_MEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_MEquipoMouseClicked
         // TODO add your handling code here:
-
         pn_AJ.setVisible(false);
         pn_AEq.setVisible(false);
         pn_AEst.setVisible(false);
         pn_ModJ.setVisible(false);
         pn_ModEq.setVisible(true);
         pn_Modest.setVisible(false);
+        pn_ElimJug.setVisible(false);
+        pn_ElimEq.setVisible(false);
+        pn_ElimEst.setVisible(false);
+        pn_simulacion.setVisible(false);
+        pn_Lista.setVisible(false);
         DefaultComboBoxModel modelo = ((DefaultComboBoxModel) cb_Eqmod.getModel());
         for (Equipo Equipo1 : Equipos) {
             modelo.addElement(Equipo1);
@@ -1358,12 +1565,17 @@ public class Main extends javax.swing.JFrame {
         if (Estadios.isEmpty()) {
 
         } else {
-            pn_ModJ.setVisible(false);
-            pn_AEq.setVisible(false);
             pn_AJ.setVisible(false);
+            pn_AEq.setVisible(false);
             pn_AEst.setVisible(false);
+            pn_ModJ.setVisible(false);
             pn_ModEq.setVisible(false);
             pn_Modest.setVisible(true);
+            pn_ElimJug.setVisible(false);
+            pn_ElimEq.setVisible(false);
+            pn_ElimEst.setVisible(false);
+            pn_simulacion.setVisible(false);
+            pn_Lista.setVisible(false);
             DefaultComboBoxModel modelo = ((DefaultComboBoxModel) (cb_Estadio.getModel()));
             for (Estadio Estadio1 : Estadios) {
                 modelo.addElement(Estadio1);
@@ -1406,12 +1618,21 @@ public class Main extends javax.swing.JFrame {
 
     private void bt_EjugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_EjugadorMouseClicked
         // TODO add your handling code here:
-        if(Jugadores.isEmpty()){
+        if (Jugadores.isEmpty()) {
             JOptionPane.showMessageDialog(null, "no hay jugadores");
-        }
-        else{
-            
-            DefaultComboBoxModel modelo=new DefaultComboBoxModel();
+        } else {
+            pn_AJ.setVisible(false);
+            pn_AEq.setVisible(false);
+            pn_AEst.setVisible(false);
+            pn_ModJ.setVisible(false);
+            pn_ModEq.setVisible(false);
+            pn_Modest.setVisible(false);
+            pn_ElimJug.setVisible(true);
+            pn_ElimEq.setVisible(false);
+            pn_ElimEst.setVisible(false);
+            pn_simulacion.setVisible(false);
+            pn_Lista.setVisible(false);
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
             for (Jugador Jugadore : Jugadores) {
                 modelo.addElement(Jugadore);
             }
@@ -1425,11 +1646,11 @@ public class Main extends javax.swing.JFrame {
             Equipos.remove(cb_elimEq.getSelectedIndex());
             JOptionPane.showMessageDialog(this, "Eliminado correctamente");
             pn_ElimEq.setVisible(false);
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "ha ocurrido un error");
         }
-        
+
     }//GEN-LAST:event_bt_ElimEquiMouseClicked
 
     private void bt_ElimEquiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_ElimEquiActionPerformed
@@ -1438,13 +1659,24 @@ public class Main extends javax.swing.JFrame {
 
     private void bt_EequipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_EequipoMouseClicked
         // TODO add your handling code here:
+        pn_AJ.setVisible(false);
+        pn_AEq.setVisible(false);
+        pn_AEst.setVisible(false);
+        pn_ModJ.setVisible(false);
+        pn_ModEq.setVisible(false);
+        pn_Modest.setVisible(false);
+        pn_ElimJug.setVisible(false);
         pn_ElimEq.setVisible(true);
-        DefaultComboBoxModel modelo=new DefaultComboBoxModel();
+        pn_ElimEst.setVisible(false);
+        pn_simulacion.setVisible(false);
+        pn_Lista.setVisible(false);
+        pn_ElimEq.setVisible(true);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         for (Equipo Equipo1 : Equipos) {
             modelo.addElement(Equipo1);
         }
         cb_elimEq.setModel(modelo);
-                
+
     }//GEN-LAST:event_bt_EequipoMouseClicked
 
     private void bt_ElimEstaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_ElimEstaMouseClicked
@@ -1464,14 +1696,180 @@ public class Main extends javax.swing.JFrame {
 
     private void bt_EestadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_EestadioMouseClicked
         // TODO add your handling code here:
+        pn_AJ.setVisible(false);
+        pn_AEq.setVisible(false);
+        pn_AEst.setVisible(false);
+        pn_ModJ.setVisible(false);
+        pn_ModEq.setVisible(false);
+        pn_Modest.setVisible(false);
+        pn_ElimJug.setVisible(false);
+        pn_ElimEq.setVisible(false);
         pn_ElimEst.setVisible(true);
-        DefaultComboBoxModel modelo=new DefaultComboBoxModel();
+        pn_simulacion.setVisible(false);
+        pn_Lista.setVisible(false);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         for (Estadio Estadio1 : Estadios) {
             modelo.addElement(Estadio1);
         }
-        
+
         cb_elimEst.setModel(modelo);
     }//GEN-LAST:event_bt_EestadioMouseClicked
+
+    private void Bt_ListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_ListarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Bt_ListarActionPerformed
+
+    private void Bt_ListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bt_ListarMouseClicked
+        // TODO add your handling code here:
+        String lista = "";
+        if (cb_objeto.getSelectedIndex() == 0) {
+            for (Jugador Equipo1 : Jugadores) {
+                lista += Equipo1.getNombre() + " " + Equipo1.getNacionalidad() + " " + Equipo1.getRating() + "\n";
+            }
+        } else if (cb_objeto.getSelectedIndex() == 1) {
+            for (Equipo Equipo1 : Equipos) {
+                lista += Equipo1.getNombre() + " " + Equipo1.getPais() + " " + Equipo1.getRating() + "\n";
+            }
+        } else if (cb_objeto.getSelectedIndex() == 2) {
+            for (Estadio Equipo1 : Estadios) {
+                lista += Equipo1.getNombre() + " " + Equipo1.getCiudad() + " " + Equipo1.getCapacidad() + " " + Equipo1.getDueño() + "\n";
+            }
+        }
+        ta_historial.setText(lista);
+    }//GEN-LAST:event_Bt_ListarMouseClicked
+
+    private void bt_listarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_listarMouseClicked
+        // TODO add your handling code here:
+        pn_AJ.setVisible(false);
+        pn_AEq.setVisible(false);
+        pn_AEst.setVisible(false);
+        pn_ModJ.setVisible(false);
+        pn_ModEq.setVisible(false);
+        pn_Modest.setVisible(false);
+        pn_ElimJug.setVisible(false);
+        pn_ElimEq.setVisible(false);
+        pn_ElimEst.setVisible(false);
+        pn_simulacion.setVisible(false);
+        pn_Lista.setVisible(true);
+    }//GEN-LAST:event_bt_listarMouseClicked
+
+    private void bt_Start1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_Start1MouseClicked
+        // TODO add your handling code here:
+        pn_AJ.setVisible(false);
+        pn_AEq.setVisible(false);
+        pn_AEst.setVisible(false);
+        pn_ModJ.setVisible(false);
+        pn_ModEq.setVisible(false);
+        pn_Modest.setVisible(false);
+        pn_ElimJug.setVisible(false);
+        pn_ElimEq.setVisible(false);
+        pn_ElimEst.setVisible(false);
+        pn_simulacion.setVisible(true);
+        pn_Lista.setVisible(false);
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (Equipo Equipo1 : Equipos) {
+            model.addElement(Equipo1);
+        }
+        cb_eq1.setModel(model);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (Equipo Equipo1 : Equipos) {
+            modelo.addElement(Equipo1);
+        }
+        cb_eq2.setModel(modelo);
+
+    }//GEN-LAST:event_bt_Start1MouseClicked
+
+    private void bt_SimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_SimularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_SimularActionPerformed
+
+    private void bt_SimularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_SimularMouseClicked
+        // TODO add your handling code here:
+        Equipo Eq1 = Equipos.get(cb_eq1.getSelectedIndex());
+        Equipo Eq2 = Equipos.get(cb_eq2.getSelectedIndex());
+        int max = 0,men=0;
+        String mas,menos;
+        if (Eq2.getRating() > Eq1.getRating()) {
+            max = Eq2.getRating();
+            men = Eq1.getRating();
+            mas=Eq2.getNombre();
+            menos=Eq1.getNombre();
+        } else {
+            max=Eq1.getRating();
+            men=Eq2.getRating();
+            mas=Eq1.getNombre();
+            menos=Eq2.getNombre();
+        }
+        int dif=max-men;
+        int probmal;
+        int probien;
+        int golmal=0,golbien=0;
+        Random ran=new Random();
+        if(dif>10){
+            
+            probien=(dif*5);
+            int goles=ran.nextInt(10);
+            for (int i = 0; i < goles; i++) {
+                int num=ran.nextInt(100);
+                if(num<=probien){
+                    golbien++;
+                }
+                else{
+                    golmal++;
+                }
+            }
+        }
+        else{
+            probmal=dif*4;
+            int goles=ran.nextInt(5);
+            for (int i = 0; i < goles; i++) {
+                int num=ran.nextInt(100);
+                if(num<=probmal){
+                    golbien++;
+                }
+                else{
+                    golmal++;
+                }
+            }
+            String resultado="";
+            if(golbien>golmal){
+                resultado="El ganador es "+mas+" con un total de "+golbien+" y el perdedor es "+menos+" con "+golmal;
+            }
+            else if(golbien<golmal){
+                resultado="El ganador es "+menos+" con un total de "+golmal+" y el perdedor es "+mas+" con "+golbien;
+            }
+            else{
+                resultado="Es un empate con "+golbien+" goles";
+            }
+            ta_resultado.setText(resultado);
+            
+        }
+    }//GEN-LAST:event_bt_SimularMouseClicked
+
+    private void bt_StartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_StartMouseClicked
+        // TODO add your handling code here:
+        pn_AJ.setVisible(false);
+        pn_AEq.setVisible(false);
+        pn_AEst.setVisible(false);
+        pn_ModJ.setVisible(false);
+        pn_ModEq.setVisible(false);
+        pn_Modest.setVisible(false);
+        pn_ElimJug.setVisible(false);
+        pn_ElimEq.setVisible(false);
+        pn_ElimEst.setVisible(false);
+        pn_simulacion.setVisible(true);
+        pn_Lista.setVisible(false);
+         DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (Equipo Equipo1 : Equipos) {
+            model.addElement(Equipo1);
+        }
+        cb_eq1.setModel(model);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (Equipo Equipo1 : Equipos) {
+            modelo.addElement(Equipo1);
+        }
+        cb_eq2.setModel(modelo);
+    }//GEN-LAST:event_bt_StartMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1511,6 +1909,7 @@ public class Main extends javax.swing.JFrame {
     ArrayList<Jugador> Jugadores = new ArrayList<>();
     ArrayList<Estadio> Estadios = new ArrayList<>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Bt_Listar;
     private javax.swing.JButton bt_AEstadio;
     private javax.swing.JButton bt_AEstadio1;
     private javax.swing.JButton bt_Aequipo;
@@ -1529,6 +1928,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_MJugador;
     private javax.swing.JButton bt_MJugador1;
     private javax.swing.JButton bt_ModEq;
+    private javax.swing.JButton bt_Simular;
     private javax.swing.JButton bt_Start;
     private javax.swing.JButton bt_Start1;
     private javax.swing.JButton bt_crearEq;
@@ -1544,17 +1944,25 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_elimEq;
     private javax.swing.JComboBox<String> cb_elimEst;
     private javax.swing.JComboBox<String> cb_elimj;
+    private javax.swing.JComboBox<String> cb_eq1;
+    private javax.swing.JComboBox<String> cb_eq2;
     private javax.swing.JComboBox<String> cb_equipoJ;
     private javax.swing.JComboBox<String> cb_jug;
     private javax.swing.JComboBox<String> cb_nvoequipoJ;
     private javax.swing.JComboBox<String> cb_nvopie;
+    private javax.swing.JComboBox<String> cb_objeto;
     private javax.swing.JComboBox<String> cb_pie;
     private javax.swing.JComboBox<String> cb_tipJ;
     private javax.swing.JFormattedTextField ftf_Edad;
     private javax.swing.JFormattedTextField ftf_capacidad;
     private javax.swing.JFormattedTextField ftf_nvaEdad;
     private javax.swing.JFormattedTextField ftf_nvacapacidad;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lb_Nacion;
     private javax.swing.JLabel lb_Nacion1;
     private javax.swing.JLabel lb_Nacion10;
@@ -1574,6 +1982,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel lb_Ronaldinho;
     private javax.swing.JLabel lb_agregarJ;
     private javax.swing.JLabel lb_agregarJ1;
+    private javax.swing.JLabel lb_agregarJ10;
+    private javax.swing.JLabel lb_agregarJ11;
     private javax.swing.JLabel lb_agregarJ2;
     private javax.swing.JLabel lb_agregarJ3;
     private javax.swing.JLabel lb_agregarJ5;
@@ -1599,9 +2009,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel pn_ElimEq;
     private javax.swing.JPanel pn_ElimEst;
     private javax.swing.JPanel pn_ElimJug;
+    private javax.swing.JPanel pn_Lista;
     private javax.swing.JPanel pn_ModEq;
     private javax.swing.JPanel pn_ModJ;
     private javax.swing.JPanel pn_Modest;
+    private javax.swing.JPanel pn_simulacion;
+    private javax.swing.JTextArea ta_historial;
+    private javax.swing.JTextArea ta_resultado;
     private javax.swing.JTextField tf_Eqnom;
     private javax.swing.JTextField tf_Eqpais;
     private javax.swing.JTextField tf_nacion;

@@ -41,6 +41,7 @@ public class Equipo {
     }
 
     public int getRating() {
+        setRating();
         return rating;
     }
 
